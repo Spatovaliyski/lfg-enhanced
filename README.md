@@ -1,4 +1,4 @@
-# EnhancedLFG – LFG Filters for WoW Forever
+# LFGEnhanced – LFG Filters for WoW Forever
 
 Filters for the **World of Warcraft: Forever** Looking For Group window. Find a tank or healer fast, match your level, and hide the clutter.
 
@@ -19,13 +19,13 @@ The filter panel sits next to the LFG window. With all filters off, the list is 
 
 Open **Looking For Group → Browse** and set your filters in the panel on the right. The **Filters** button at the bottom shows or hides the panel.
 
-- `/elfg` shows or hides the panel.
-- `/elfg reset` turns all filters off.
-- `/elfg unhideall` clears hidden players.
+- `/lfg` shows or hides the panel.
+- `/lfg reset` turns all filters off.
+- `/lfg unhideall` clears hidden players.
 
 ## Install
 
-Put the `EnhancedLFG` folder in `_forever_\Interface\AddOns\` and restart the game.
+Put the `LFGEnhanced` folder in `_forever_\Interface\AddOns\` and restart the game.
 
 ## Notes
 

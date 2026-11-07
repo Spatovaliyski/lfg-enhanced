@@ -1,4 +1,4 @@
--- EnhancedLFG: filters for WoW Forever's Looking For Group browse list.
+-- LFGEnhanced: filters for WoW Forever's Looking For Group browse list.
 --
 -- Blizzard's list lives in Blizzard_GroupFinder_VanillaStyle (load-on-demand). Its
 -- LFGBrowseMixin:UpdateResultList() fetches the results, sorts them with the global
@@ -55,7 +55,7 @@ local function ApplyDefaults(dst, src)
 end
 
 function ns.Print(msg)
-    print("|cff33ff99EnhancedLFG|r: " .. msg)
+    print("|cff33ff99LFGEnhanced|r: " .. msg)
 end
 
 ------------------------------------------------------------------------------------------------
@@ -161,8 +161,8 @@ events:SetScript("OnEvent", function(self, event, arg1)
             return
         end
         self:UnregisterEvent("ADDON_LOADED")
-        EnhancedLFGDB = EnhancedLFGDB or {}
-        ns.db = EnhancedLFGDB
+        LFGEnhancedDB = LFGEnhancedDB or {}
+        ns.db = LFGEnhancedDB
         ApplyDefaults(ns.db, ns.DEFAULTS)
         for _, e in ipairs(REFRESH_EVENTS) do
             self:RegisterEvent(e)
@@ -183,16 +183,16 @@ end)
 ------------------------------------------------------------------------------------------------
 -- Slash command
 ------------------------------------------------------------------------------------------------
-SLASH_ENHANCEDLFG1 = "/elfg"
-SLASH_ENHANCEDLFG2 = "/enhancedlfg"
-SlashCmdList.ENHANCEDLFG = function(msg)
+SLASH_LFGENHANCED1 = "/lfg"
+SLASH_LFGENHANCED2 = "/lfgenhanced"
+SlashCmdList.LFGENHANCED = function(msg)
     msg = strtrim((msg or ""):lower())
     if not ns.db then
         return
     end
     if msg == "reset" then
         ns.ResetFilters()
-        ns.Print("Filters reset. Hidden players are kept; use /elfg unhideall to clear them.")
+        ns.Print("Filters reset. Hidden players are kept; use /lfg unhideall to clear them.")
     elseif msg == "unhideall" then
         ns.ClearBlocked()
         ns.Print("All hidden players are visible again.")
@@ -203,8 +203,8 @@ SlashCmdList.ENHANCEDLFG = function(msg)
                 ns.db.panelShown and "on" or "off"))
         end
     else
-        ns.Print("/elfg - show or hide the filter panel")
-        ns.Print("/elfg reset - turn every filter off (hidden players are kept)")
-        ns.Print("/elfg unhideall - clear your hidden players list")
+        ns.Print("/lfg - show or hide the filter panel")
+        ns.Print("/lfg reset - turn every filter off (hidden players are kept)")
+        ns.Print("/lfg unhideall - clear your hidden players list")
     end
 end

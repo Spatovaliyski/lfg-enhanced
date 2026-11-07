@@ -45,7 +45,7 @@ local function GetHideButton(entry)
     b:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
         GameTooltip:SetText("Hide " .. (self.leaderName or ""), HIGHLIGHT_FONT_COLOR:GetRGB())
-        GameTooltip:AddLine("EnhancedLFG keeps this name out of the list. Unhide it from the filter panel.",
+        GameTooltip:AddLine("LFGEnhanced keeps this name out of the list. Unhide it from the filter panel.",
             NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g, NORMAL_FONT_COLOR.b, true)
         GameTooltip:Show()
     end)
@@ -127,7 +127,7 @@ local function CreateToggle()
     end)
     toggle:SetScript("OnEnter", function(self)
         GameTooltip:SetOwner(self, "ANCHOR_TOP")
-        GameTooltip:SetText("EnhancedLFG filters", HIGHLIGHT_FONT_COLOR:GetRGB())
+        GameTooltip:SetText("LFGEnhanced filters", HIGHLIGHT_FONT_COLOR:GetRGB())
         GameTooltip:AddLine("Click to show or hide the filter panel.", NORMAL_FONT_COLOR.r, NORMAL_FONT_COLOR.g,
             NORMAL_FONT_COLOR.b, true)
         if ns.HasResettableFilters() then

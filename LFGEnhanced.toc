@@ -1,8 +1,8 @@
 ## Interface: 16001
-## Title: EnhancedLFG
+## Title: LFGEnhanced
 ## Notes: Filters for the Looking For Group list: roles (with an automatic "what my group needs" mode), level, class, playstyle, Discord, delisted rows and a list of hidden players.
-## Version: 1.0.0
-## SavedVariables: EnhancedLFGDB
+## Version: 1.0.1
+## SavedVariables: LFGEnhancedDB
 ## IconTexture: Interface\Icons\INV_Misc_Spyglass_03
 
 Core.lua

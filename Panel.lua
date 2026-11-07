@@ -42,11 +42,11 @@ local function MakeFont(name, size, r, g, b)
 end
 
 local Fonts = {
-    label = MakeFont("EnhancedLFGFontLabel", 14, NORMAL_FONT_COLOR:GetRGB()),
-    gold = MakeFont("EnhancedLFGFontGold", 13, NORMAL_FONT_COLOR:GetRGB()),
-    text = MakeFont("EnhancedLFGFontText", 13, HIGHLIGHT_FONT_COLOR:GetRGB()),
-    muted = MakeFont("EnhancedLFGFontMuted", 13, 0.8, 0.8, 0.8),
-    dim = MakeFont("EnhancedLFGFontDim", 13, 0.58, 0.58, 0.58),
+    label = MakeFont("LFGEnhancedFontLabel", 14, NORMAL_FONT_COLOR:GetRGB()),
+    gold = MakeFont("LFGEnhancedFontGold", 13, NORMAL_FONT_COLOR:GetRGB()),
+    text = MakeFont("LFGEnhancedFontText", 13, HIGHLIGHT_FONT_COLOR:GetRGB()),
+    muted = MakeFont("LFGEnhancedFontMuted", 13, 0.8, 0.8, 0.8),
+    dim = MakeFont("LFGEnhancedFontDim", 13, 0.58, 0.58, 0.58),
 }
 ns.Fonts = Fonts
 
@@ -446,12 +446,12 @@ local function BuildLevel()
     range:SetAllPoints()
     local from = Text(range, Fonts.muted, "From")
     from:SetPoint("LEFT", 0, 0)
-    local minBox = CreateNumberBox("EnhancedLFGLevelMin", range,
+    local minBox = CreateNumberBox("LFGEnhancedLevelMin", range,
         function() return ns.db.levelMin end, function(v) ns.db.levelMin = v end, true)
     minBox:SetPoint("LEFT", from, "RIGHT", 12, 0)
     local to = Text(range, Fonts.muted, "to")
     to:SetPoint("LEFT", minBox, "RIGHT", 8, 0)
-    local maxBox = CreateNumberBox("EnhancedLFGLevelMax", range,
+    local maxBox = CreateNumberBox("LFGEnhancedLevelMax", range,
         function() return ns.db.levelMax end, function(v) ns.db.levelMax = v end, true)
     maxBox:SetPoint("LEFT", to, "RIGHT", 12, 0)
     minBox.nextEditBox, maxBox.nextEditBox = maxBox, minBox
@@ -460,7 +460,7 @@ local function BuildLevel()
     near:SetAllPoints()
     local within = Text(near, Fonts.muted, "Within \194\177")
     within:SetPoint("LEFT", 0, 0)
-    local nearBox = CreateNumberBox("EnhancedLFGLevelNear", near,
+    local nearBox = CreateNumberBox("LFGEnhancedLevelNear", near,
         function() return ns.db.levelNear end, function(v) ns.db.levelNear = v end)
     nearBox:SetPoint("LEFT", within, "RIGHT", 12, 0)
     local mine = Text(near, Fonts.muted)
@@ -663,7 +663,7 @@ end
 
 function ns.CreatePanel()
     local parent = LFGParentFrame
-    panel = CreateFrame("Frame", "EnhancedLFGPanel", LFGBrowseFrame, "DefaultPanelFlatTemplate")
+    panel = CreateFrame("Frame", "LFGEnhancedPanel", LFGBrowseFrame, "DefaultPanelFlatTemplate")
     panel:SetWidth(PANEL_WIDTH)
     -- Clear Blizzard's side tabs (Listing / Browse / Who) on the window's right edge.
     local tabs = parent.ListingTab
